@@ -1,0 +1,32 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "demo node js ",
+  "main": "App.js",
+  "scripts": {
+    "start": "nodemon start index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0React-Repo/React_apps.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "learn"
+  ],
+  "author": "Akshay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0React-Repo/React_apps/issues"
+  },
+  "homepage": "https://github.com/0React-Repo/React_apps#readme",
+  "dependencies": {
+    "color": "^4.2.3",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2",
+    "pg": "^8.11.3",
+    "sequelize": "^6.35.2",
+    "simple-node-logger": "^21.8.12"
+  }
+}
