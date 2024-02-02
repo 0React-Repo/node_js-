@@ -1,6 +1,7 @@
 var db = require("../models");
 var User = db.user;
-
+const { Sequelize} = require('sequelize');
+const { Op } = require("sequelize");
 const addUsers = async (req, res) => {
   const jane = User.build({ firstName: "Jane", lastName: "joseph" });
   console.log(jane instanceof User); // true
@@ -57,13 +58,17 @@ var patchUser = async (req, res) => {
   res.status(200).json({ data: data });
 };
 //////////////////
-var queryUser= async (req, res) => {
-  const data = await User.create({
-    firstName:"Rahul",
-    lastName:"Saxena",
-  },{fields:["firstName"]});
-  res.status(200).json({ data: data });
-}
+var queryUser = async (req, res) => {
+  try {
+    const data = await User.findAll({ group: 'firstName',limit:1 });
+
+    res.status(200).json({ data: data });
+  } catch (error) {
+    console.error("Error querying users:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 
 module.exports = {
   addUsers,
