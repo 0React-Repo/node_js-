@@ -1,7 +1,7 @@
 
 const express=require("express")
 const app=express()
-const port=3004;
+const port=5432;
 const BodyParser=require("body-parser")
 require("./models");
 var userCtrl=require("./controller/userController.js");
